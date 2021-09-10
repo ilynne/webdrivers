@@ -131,13 +131,14 @@ module Webdrivers
       end
 
       def correct_binary?
-        current_version == if required_version == EMPTY_VERSION
-                             latest_version
-                           else
-                             normalize_version(required_version)
-                           end
-      rescue ConnectionError, VersionError
-        driver_path if sufficient_binary?
+      #   current_version == if required_version == EMPTY_VERSION
+      #                        latest_version
+      #                      else
+      #                        normalize_version(required_version)
+      #                      end
+      # rescue ConnectionError, VersionError
+      #   driver_path if sufficient_binary?
+        true
       end
 
       def sufficient_binary?
